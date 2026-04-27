@@ -20,5 +20,19 @@ def generar_ubicaciones(cantidad):
             "direccion": f"Calle {random.randint(1, 100)} #{random.randint(1, 50)}-{random.randint(1, 50)}",
             "id_reporte": random.randint(1, 50)
         }
+
+        #inyectando errores controlados
+        probabilidadError=random.random()
+
+        if probabilidadError<0.1:
+            ubicacion["id_ubicacion"]=random.choice([None,-1,0])
+            ubicacion["ciudad"]=None
+        elif probabilidadError<0.3:
+            ubicacion["zona"]=" "+ubicacion["zona"]+" "
+        elif probabilidadError<0.6:
+            ubicacion["direccion"]=ubicacion["direccion"].upper()
+        elif probabilidadError<0.9:
+            ubicacion["id_reporte"]=None
+
         ubicaciones.append(ubicacion)
     return ubicaciones
