@@ -18,7 +18,8 @@ def generar_ubicaciones(cantidad):
             "ciudad": random.choice(listaCiudades),
             "zona": random.choice(listaZonas),
             "direccion": f"Calle {random.randint(1, 100)} #{random.randint(1, 50)}-{random.randint(1, 50)}",
-            "id_reporte": random.randint(1, 50)
+            "id_reporte": random.randint(1, 50),
+            "fecha_reporte": f"2024-{random.randint(1,12)}-{random.randint(1,28)}"
         }
 
         #inyectando errores controlados
